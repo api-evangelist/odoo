@@ -7,9 +7,9 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - ERP
-  - CRM
   - Business Applications
+  - CRM
+  - ERP
   - Open Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/odoo/refs/heads/main/apis.yml
