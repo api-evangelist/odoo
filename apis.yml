@@ -37,6 +37,11 @@ common:
     url: https://www.odoo.com/documentation/
   - type: GitHub Organization
     url: https://github.com/odoo
+  - type: Integrations
+    url: https://apps.odoo.com/apps
+integrations:
+  - name: Third party apps
+  - name: Sales Conditions
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
