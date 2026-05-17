@@ -35,7 +35,7 @@ common:
     url: https://www.odoo.com/
   - type: Documentation
     url: https://www.odoo.com/documentation/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/odoo
   - type: Integrations
     url: https://apps.odoo.com/apps
