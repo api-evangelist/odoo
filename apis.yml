@@ -31,6 +31,8 @@ apis:
       - type: Documentation
         url: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/odoo
   - type: Website
     url: https://www.odoo.com/
   - type: Documentation
