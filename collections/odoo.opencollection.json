@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Odoo External API",
+    "version": "17.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Common",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "XML-RPC common endpoint (version, authenticate)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.odoo.com/xmlrpc/2/common"
+          },
+          "docs": "Accepts unauthenticated XML-RPC method calls. Used to retrieve\nserver metadata via `version()` and to authenticate via\n`authenticate(db, login, password, {})` which returns the user\nidentifier (uid) needed for subsequent calls.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Object",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "XML-RPC object endpoint (execute_kw on Odoo models)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.odoo.com/xmlrpc/2/object"
+          },
+          "docs": "Accepts authenticated XML-RPC `execute_kw` calls with positional\narguments (db, uid, password/api-key, model, method, args, kwargs).\nSupported model methods include `search`, `search_count`, `read`,\n`search_read`, `fields_get`, `create`, `write`, and `unlink`.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "JSON-RPC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "JSON-RPC transport for the same operations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.odoo.com/jsonrpc",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Equivalent JSON-RPC 2.0 transport, accepting calls to the common\nand object services. Use `service: common, method: authenticate`\nor `service: object, method: execute_kw` with the same argument\nsignatures as the XML-RPC endpoints.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
