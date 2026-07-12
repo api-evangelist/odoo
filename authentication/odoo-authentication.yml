@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/odoo-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: OdooApiKey
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  description: |-
+    Odoo 14+ supports per-user API keys generated under user preferences
+    Account Security. These can be substituted for the password parameter
+    in `authenticate` and `execute_kw` calls.
+  sources:
+  - openapi/odoo-openapi.yml

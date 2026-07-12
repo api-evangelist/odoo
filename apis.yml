@@ -31,6 +31,12 @@ apis:
       - type: Documentation
         url: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
 common:
+  - type: VulnerabilityDisclosure
+    url: security/odoo-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/odoo-domain-security.yml
+  - type: Authentication
+    url: authentication/odoo-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/odoo
   - type: Website
@@ -41,6 +47,8 @@ common:
     url: https://github.com/odoo
   - type: Integrations
     url: https://apps.odoo.com/apps
+  - url: https://www.odoo.com/blog
+    type: Blog
 integrations:
   - name: Third party apps
   - name: Sales Conditions
