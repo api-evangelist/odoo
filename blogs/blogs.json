@@ -1,0 +1,14 @@
+{
+  "repo": "odoo",
+  "feeds": [
+    {
+      "source": "https://www.odoo.com/blog",
+      "feed_url": "https://www.odoo.com/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 12
+}
