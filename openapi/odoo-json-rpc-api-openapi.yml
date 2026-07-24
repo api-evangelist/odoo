@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: Odoo External Common JSON-RPC API
+  description: 'Odoo''s external API exposes business data and methods via XML-RPC (and
+
+    JSON-RPC) endpoints. The common endpoint accepts unauthenticated calls
+
+    used for version information and authentication; the object endpoint
+
+    accepts authenticated `execute_kw` calls that operate on Odoo models
+
+    (search, search_count, read, search_read, fields_get, create, write,
+
+    unlink). Authentication is performed by calling `authenticate` on the
+
+    common endpoint with database, username, and password or API key
+
+    (Odoo 14+). This OpenAPI describes the HTTP transport surface; the
+
+    XML-RPC request bodies follow the standard XML-RPC envelope.
+
+    '
+  version: '17.0'
+  contact:
+    name: Odoo
+    url: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
+servers:
+- url: https://{instance}.odoo.com
+  description: Odoo Online or self-hosted instance
+  variables:
+    instance:
+      default: mycompany
+      description: Odoo instance / database hostname prefix
+security: []
+tags:
+- name: JSON-RPC
+  description: JSON-RPC transport for the same operations
+paths:
+  /jsonrpc:
+    post:
+      tags:
+      - JSON-RPC
+      summary: JSON-RPC transport for the same operations
+      description: 'Equivalent JSON-RPC 2.0 transport, accepting calls to the common
+
+        and object services. Use `service: common, method: authenticate`
+
+        or `service: object, method: execute_kw` with the same argument
+
+        signatures as the XML-RPC endpoints.
+
+        '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - jsonrpc
+              - method
+              - params
+              properties:
+                jsonrpc:
+                  type: string
+                  enum:
+                  - '2.0'
+                method:
+                  type: string
+                  enum:
+                  - call
+                params:
+                  type: object
+                  properties:
+                    service:
+                      type: string
+                      enum:
+                      - common
+                      - object
+                      - db
+                    method:
+                      type: string
+                    args:
+                      type: array
+                      items: {}
+                id:
+                  type: integer
+      responses:
+        '200':
+          description: JSON-RPC response envelope
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jsonrpc:
+                    type: string
+                  id:
+                    type: integer
+                  result: {}
+                  error:
+                    type: object
+components:
+  securitySchemes:
+    OdooApiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: 'Odoo 14+ supports per-user API keys generated under user preferences
+
+        Account Security. These can be substituted for the password parameter
+
+        in `authenticate` and `execute_kw` calls.
+
+        '

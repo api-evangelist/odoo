@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: Odoo External Common API
+  description: 'Odoo''s external API exposes business data and methods via XML-RPC (and
+
+    JSON-RPC) endpoints. The common endpoint accepts unauthenticated calls
+
+    used for version information and authentication; the object endpoint
+
+    accepts authenticated `execute_kw` calls that operate on Odoo models
+
+    (search, search_count, read, search_read, fields_get, create, write,
+
+    unlink). Authentication is performed by calling `authenticate` on the
+
+    common endpoint with database, username, and password or API key
+
+    (Odoo 14+). This OpenAPI describes the HTTP transport surface; the
+
+    XML-RPC request bodies follow the standard XML-RPC envelope.
+
+    '
+  version: '17.0'
+  contact:
+    name: Odoo
+    url: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
+servers:
+- url: https://{instance}.odoo.com
+  description: Odoo Online or self-hosted instance
+  variables:
+    instance:
+      default: mycompany
+      description: Odoo instance / database hostname prefix
+security: []
+tags:
+- name: Common
+  description: Unauthenticated XML-RPC endpoint for version + authentication
+paths:
+  /xmlrpc/2/common:
+    post:
+      tags:
+      - Common
+      summary: XML-RPC common endpoint (version, authenticate)
+      description: 'Accepts unauthenticated XML-RPC method calls. Used to retrieve
+
+        server metadata via `version()` and to authenticate via
+
+        `authenticate(db, login, password, {})` which returns the user
+
+        identifier (uid) needed for subsequent calls.
+
+        '
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              type: string
+              description: XML-RPC methodCall envelope (e.g. version or authenticate)
+      responses:
+        '200':
+          description: XML-RPC methodResponse
+          content:
+            application/xml:
+              schema:
+                type: string
+components:
+  securitySchemes:
+    OdooApiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: 'Odoo 14+ supports per-user API keys generated under user preferences
+
+        Account Security. These can be substituted for the password parameter
+
+        in `authenticate` and `execute_kw` calls.
+
+        '
