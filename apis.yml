@@ -5,7 +5,20 @@ description: >-
   eCommerce, accounting, inventory, and more. Odoo provides external APIs
   for integrating with the Odoo platform using JSON-RPC and XML-RPC protocols.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/odoo.png
 tags:
   - Business Applications
   - CRM
@@ -17,19 +30,46 @@ created: '2026-03-16'
 modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
-  - aid: odoo:odoo-external-api
-    name: Odoo External API
-    description: >-
-      Odoo's external API for integrating with the platform using JSON-RPC
-      and XML-RPC protocols for accessing all business modules.
-    humanURL: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
-    tags:
-      - ERP
-      - JSON-RPC
-      - XML-RPC
-    properties:
-      - type: Documentation
-        url: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
+- aid: odoo:odoo-external-api
+  name: Odoo External API
+  description: >-
+    Odoo's external API for integrating with the platform using JSON-RPC and XML-RPC protocols for accessing
+    all business modules.
+  humanURL: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
+  tags:
+  - ERP
+  - JSON-RPC
+  - XML-RPC
+  properties:
+  - type: Documentation
+    url: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
+- aid: odoo:odoo-common-api
+  name: Odoo Common API
+  description: Unauthenticated XML-RPC endpoint for version + authentication
+  humanURL: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
+  tags:
+  - Common
+  properties:
+  - type: OpenAPI
+    url: openapi/odoo-common-api-openapi.yml
+- aid: odoo:odoo-json-rpc-api
+  name: Odoo JSON-RPC API
+  description: JSON-RPC transport for the same operations
+  humanURL: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
+  tags:
+  - JSON-RPC
+  properties:
+  - type: OpenAPI
+    url: openapi/odoo-json-rpc-api-openapi.yml
+- aid: odoo:odoo-object-api
+  name: Odoo Object API
+  description: Authenticated XML-RPC endpoint for model operations
+  humanURL: https://www.odoo.com/documentation/17.0/developer/reference/external_api.html
+  tags:
+  - Object
+  properties:
+  - type: OpenAPI
+    url: openapi/odoo-object-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/odoo-agentic-access.yml
