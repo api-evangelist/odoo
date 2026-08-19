@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Odoo External Common API",
+    "version": "17.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Common",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "XML-RPC common endpoint (version, authenticate)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.odoo.com/xmlrpc/2/common"
+          },
+          "docs": "Accepts unauthenticated XML-RPC method calls. Used to retrieve\nserver metadata via `version()` and to authenticate via\n`authenticate(db, login, password, {})` which returns the user\nidentifier (uid) needed for subsequent calls.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

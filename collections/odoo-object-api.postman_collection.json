@@ -1,0 +1,150 @@
+{
+  "item": [
+    {
+      "id": "d40133c8-9676-4589-ab0d-fcb397e82354",
+      "name": "Object",
+      "description": {
+        "content": "Authenticated XML-RPC endpoint for model operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8523505b-a688-428c-ab52-e574bb7875ee",
+          "name": "XML-RPC object endpoint (execute_kw on Odoo models)",
+          "request": {
+            "name": "XML-RPC object endpoint (execute_kw on Odoo models)",
+            "description": {
+              "content": "Accepts authenticated XML-RPC `execute_kw` calls with positional\narguments (db, uid, password/api-key, model, method, args, kwargs).\nSupported model methods include `search`, `search_count`, `read`,\n`search_read`, `fields_get`, `create`, `write`, and `unlink`.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "xmlrpc",
+                "2",
+                "object"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Odoo instance / database hostname prefix",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6b385b34-d9c7-44a6-aee3-ed6ca2d2e66d",
+              "name": "XML-RPC methodResponse (record IDs, data, or fault)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "xmlrpc",
+                    "2",
+                    "object"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Odoo instance / database hostname prefix",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Odoo instance / database hostname prefix",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "mycompany",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.odoo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6e3704d5-b98a-498f-b6fe-2e7c70870179",
+    "name": "Odoo External Common Object API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Odoo's external API exposes business data and methods via XML-RPC (and\nJSON-RPC) endpoints. The common endpoint accepts unauthenticated calls\nused for version information and authentication; the object endpoint\naccepts authenticated `execute_kw` calls that operate on Odoo models\n(search, search_count, read, search_read, fields_get, create, write,\nunlink). Authentication is performed by calling `authenticate` on the\ncommon endpoint with database, username, and password or API key\n(Odoo 14+). This OpenAPI describes the HTTP transport surface; the\nXML-RPC request bodies follow the standard XML-RPC envelope.\n\n\nContact Support:\n Name: Odoo",
+      "type": "text/plain"
+    }
+  }
+}

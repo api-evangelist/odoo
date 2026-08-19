@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Odoo External Common JSON-RPC API",
+    "version": "17.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "JSON-RPC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "JSON-RPC transport for the same operations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.odoo.com/jsonrpc",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Equivalent JSON-RPC 2.0 transport, accepting calls to the common\nand object services. Use `service: common, method: authenticate`\nor `service: object, method: execute_kw` with the same argument\nsignatures as the XML-RPC endpoints.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

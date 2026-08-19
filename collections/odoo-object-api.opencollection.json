@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Odoo External Common Object API",
+    "version": "17.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Object",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "XML-RPC object endpoint (execute_kw on Odoo models)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.odoo.com/xmlrpc/2/object"
+          },
+          "docs": "Accepts authenticated XML-RPC `execute_kw` calls with positional\narguments (db, uid, password/api-key, model, method, args, kwargs).\nSupported model methods include `search`, `search_count`, `read`,\n`search_read`, `fields_get`, `create`, `write`, and `unlink`.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
