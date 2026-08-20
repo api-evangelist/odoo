@@ -23,6 +23,11 @@ tags:
   - Business Applications
   - CRM
   - ERP
+  - Open-Source
+tags_raw:
+  - Business Applications
+  - CRM
+  - ERP
   - Open Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/odoo/refs/heads/main/apis.yml
