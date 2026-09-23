@@ -1,25 +1,9 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Odoo External Common JSON-RPC API
+  title: Odoo External JSON RPC API
   description: 'Odoo''s external API exposes business data and methods via XML-RPC (and
 
-    JSON-RPC) endpoints. The common endpoint accepts unauthenticated calls
-
-    used for version information and authentication; the object endpoint
-
-    accepts authenticated `execute_kw` calls that operate on Odoo models
-
-    (search, search_count, read, search_read, fields_get, create, write,
-
-    unlink). Authentication is performed by calling `authenticate` on the
-
-    common endpoint with database, username, and password or API key
-
-    (Odoo 14+). This OpenAPI describes the HTTP transport surface; the
-
-    XML-RPC request bodies follow the standard XML-RPC envelope.
-
-    '
+    JSON-RPC) endpoints.'
   version: '17.0'
   contact:
     name: Odoo
@@ -47,9 +31,7 @@ paths:
 
         or `service: object, method: execute_kw` with the same argument
 
-        signatures as the XML-RPC endpoints.
-
-        '
+        signatures as the XML-RPC endpoints.'
       requestBody:
         required: true
         content:
@@ -100,6 +82,8 @@ paths:
                   result: {}
                   error:
                     type: object
+      operationId: postJsonrpc
+      x-operation-id-source: derived
 components:
   securitySchemes:
     OdooApiKey:
