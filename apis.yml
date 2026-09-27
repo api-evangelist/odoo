@@ -35,12 +35,15 @@ tags:
   - Business Applications
   - CRM
   - ERP
-  - Open-Source
+  - Open Source
+  - Accounting
 tags_raw:
   - Business Applications
   - CRM
   - ERP
   - Open Source
+  - Accounting
+  - Open-Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/odoo/refs/heads/main/apis.yml
 created: '2026-03-16'
