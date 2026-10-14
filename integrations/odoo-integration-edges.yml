@@ -6,8 +6,10 @@ source:
 - https://composio.dev/toolkits/odoo
 checked:
 - https://composio.dev/toolkits/odoo
+- https://marketplace.visualstudio.com/vscode
 - https://monid.ai/tools/odoo
 - https://n8n.io/integrations/odoo/
+- https://plugins.jetbrains.com/
 - https://zapier.com/apps/odoo/integrations
 summary: null
 marketplace_apps:
@@ -704,6 +706,41 @@ edges:
     property: components.schemas.PlatformName
     detected_by: detect-payment-method-edges.py
     detected: '2026-10-12'
+- partner_name: JetBrains Marketplace
+  partner: jetbrains
+  partner_match: aggregator
+  type: marketplace
+  marketplace: jetbrains
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://plugins.jetbrains.com/vendor/odoo
+  listing_count: 1
+  apps:
+  - Odoo
+  publisher_name: Odoo
+  badges:
+  - Verified vendor
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
+- partner_name: Visual Studio Code Marketplace
+  partner: vs-code-marketplace
+  partner_match: aggregator
+  type: marketplace
+  marketplace: vscode
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://marketplace.visualstudio.com/publishers/Odoo
+  listing_count: 1
+  apps:
+  - Odoo
+  publisher_name: Odoo
+  badges:
+  - Verified publisher
+  - Verified domain
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
 templates:
 - title: Create Odoo CRM leads from new Facebook Ads leads
   url: https://zapier.com/apps/facebook-lead-ads/integrations/odoo/54246/create-odoo-crm-leads-from-new-facebook-ads-leads

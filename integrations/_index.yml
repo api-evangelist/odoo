@@ -130,7 +130,6 @@
   arazzo: null
 - slug: odoo-microsoft-excel
   label: Microsoft Excel
-  partner: microsoft-excel
   partner_name: Microsoft Excel
   category: Microsoft
   type: marketplace
@@ -138,7 +137,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/odoo/integrations/excel
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: odoo-hubspot
   label: HubSpot
@@ -341,7 +340,6 @@
   arazzo: null
 - slug: odoo-linkedin-ads
   label: LinkedIn Ads
-  partner: linkedin-ads
   partner_name: LinkedIn Ads
   category: Ads & Conversion
   type: marketplace
@@ -349,7 +347,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/odoo/integrations/linkedin-ads
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: odoo-calendly
   label: Calendly
@@ -432,5 +430,29 @@
     property: components.schemas.PlatformName
     detected_by: detect-payment-method-edges.py
     detected: '2026-10-12'
+  status: not-a-workflow
+  arazzo: null
+- slug: odoo-jetbrains-marketplace
+  label: JetBrains Marketplace
+  partner: jetbrains
+  partner_name: JetBrains Marketplace
+  type: marketplace
+  marketplace: jetbrains
+  channel: partner-built
+  evidence: https://plugins.jetbrains.com/vendor/odoo
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: odoo-visual-studio-code-marketplace
+  label: Visual Studio Code Marketplace
+  partner: vs-code-marketplace
+  partner_name: Visual Studio Code Marketplace
+  type: marketplace
+  marketplace: vscode
+  channel: partner-built
+  evidence: https://marketplace.visualstudio.com/publishers/Odoo
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
