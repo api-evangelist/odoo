@@ -581,7 +581,7 @@
     builder: unknown (not in the directory record)
     other_apps:
     - openerp
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: odoo-n8n
   label: n8n
@@ -608,7 +608,7 @@
     builder: n8n (built-in node)
     other_nodes:
     - Odoo/v1
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: odoo-pipedream
   label: Pipedream
@@ -634,5 +634,5 @@
     actions: true
     sources: true
     builder: Pipedream repo (component)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
