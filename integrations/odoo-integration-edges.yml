@@ -10,6 +10,9 @@ checked:
 - https://monid.ai/tools/odoo
 - https://n8n.io/integrations/odoo/
 - https://plugins.jetbrains.com/
+- https://www.gs1.org/services/gdsn/certified-data-pools-list
+- https://www.gs1us.org/services/find-gs1-us-solution-partner/profiles
+- https://www.spscommerce.com/partner-community/directory/
 - https://zapier.com/apps/odoo/integrations
 - shopify/integrations/shopify-integration-edges.yml
 summary: null
@@ -758,6 +761,32 @@ edges:
   listing_count: 1
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
+- partner_name: SPS Commerce
+  partner: sps-commerce
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  app: Odoo
+  evidence: https://www.spscommerce.com/partner-community/directory/
+  category: Software Provider
+  contract_reference:
+    register: SPS Commerce partner community directory
+    spec_file: null
+    role: sps-integration-partner
+    registered_name: Odoo
+    website: https://www.odoo.com
+    matched_domain: odoo.com
+    matched_by: domain
+    business_types:
+    - Software Provider
+    signal_note: 'participation only: a directory listing, never a count'
+    detected_by: sweep-consumer-goods.py
+    detected: '2026-10-15'
+  detected_by: sweep-consumer-goods.py
+  first_seen: '2026-10-15'
 templates:
 - title: Create Odoo CRM leads from new Facebook Ads leads
   url: https://zapier.com/apps/facebook-lead-ads/integrations/odoo/54246/create-odoo-crm-leads-from-new-facebook-ads-leads
