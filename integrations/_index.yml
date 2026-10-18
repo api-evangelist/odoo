@@ -696,7 +696,7 @@
     - connectors/applications/odoo-synconics
     vendor_link: https://www.odoo.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: odoo-google-workspace-own
   label: Google Workspace (own)
