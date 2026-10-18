@@ -5,6 +5,7 @@ source:
 - https://n8n.io/integrations/odoo/
 - https://composio.dev/toolkits/odoo
 checked:
+- google-workspace/integrations/google-workspace-integration-edges.yml
 - https://composio.dev/toolkits/odoo
 - https://fivetran.com/docs-sitemap.xml
 - https://fivetran.com/docs/connectors/partner-built-program
@@ -1024,6 +1025,23 @@ edges:
     builder: Fivetran
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Odoo Inbox Addin
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
 templates:
 - title: Create Odoo CRM leads from new Facebook Ads leads
   url: https://zapier.com/apps/facebook-lead-ads/integrations/odoo/54246/create-odoo-crm-leads-from-new-facebook-ads-leads
