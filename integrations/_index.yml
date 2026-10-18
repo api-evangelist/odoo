@@ -636,3 +636,38 @@
     builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null
+- slug: odoo-metrc-validated-integrators
+  label: Metrc (validated integrators)
+  partner_name: Metrc (validated integrators)
+  category: Cannabis track-and-trace
+  type: register
+  channel: standard-directory
+  evidence: https://www.metrc.com/validated-integrators/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Metrc Validated Integrators (metrc.com/validated-integrators, admin-ajax fetch_providers)
+    spec_file: null
+    standard: Metrc validated integrator (state cannabis track-and-trace)
+    role: metrc-validated-integrator
+    registered_name: Odoo Inc
+    register_id: Odoo Inc
+    website: https://www.odoo.com/
+    matched_domain: odoo.com
+    matched_by: domain
+    signal_note: certified_products = one entry per STATE with Full or Partial Validation (level kept); Get Access
+      = API access only, participation; Metrc drops lapsed integrators, lapsed never set
+    detected_by: sweep-regulated-retail.py
+    detected: '2026-10-18'
+    certified_products:
+    - product: 'Metrc validated integration: California'
+      state: California
+      level: Full Validation
+    - product: 'Metrc validated integration: Massachusetts'
+      state: Massachusetts
+      level: Full Validation
+    - product: 'Metrc validated integration: Michigan'
+      state: Michigan
+      level: Full Validation
+  status: not-a-workflow
+  arazzo: null
