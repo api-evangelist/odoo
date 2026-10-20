@@ -468,6 +468,54 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: odoo-metrc-validated-integrators
+  label: Metrc (validated integrators)
+  partner_name: Metrc (validated integrators)
+  category: Cannabis track-and-trace
+  type: register
+  channel: standard-directory
+  evidence: https://www.metrc.com/validated-integrators/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Metrc Validated Integrators (metrc.com/validated-integrators, admin-ajax fetch_providers)
+    spec_file: null
+    standard: Metrc validated integrator (state cannabis track-and-trace)
+    role: metrc-validated-integrator
+    registered_name: Odoo Inc
+    register_id: Odoo Inc
+    website: https://www.odoo.com/
+    matched_domain: odoo.com
+    matched_by: domain
+    signal_note: certified_products = one entry per STATE with Full or Partial Validation (level kept); Get Access
+      = API access only, participation; Metrc drops lapsed integrators, lapsed never set
+    detected_by: sweep-regulated-retail.py
+    detected: '2026-10-18'
+    certified_products:
+    - product: 'Metrc validated integration: California'
+      state: California
+      level: Full Validation
+    - product: 'Metrc validated integration: Massachusetts'
+      state: Massachusetts
+      level: Full Validation
+    - product: 'Metrc validated integration: Michigan'
+      state: Michigan
+      level: Full Validation
+  status: not-a-workflow
+  arazzo: null
+- slug: odoo-google-workspace-own
+  label: Google Workspace (own)
+  partner: google-workspace
+  partner_name: Google Workspace (own)
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: odoo-sps-commerce
   label: SPS Commerce
   partner: sps-commerce
@@ -491,7 +539,34 @@
     - Software Provider
     signal_note: 'participation only: a directory listing, never a count'
     detected_by: sweep-consumer-goods.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: odoo-fivetran
+  label: Fivetran
+  partner: fivetran
+  partner_name: Fivetran
+  type: marketplace
+  marketplace: fivetran-connectors
+  channel: elt-connector
+  evidence: https://fivetran.com/docs/connectors/applications/odoo
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
+    spec_file: null
+    role: elt-connector:fivetran
+    registered_name: Odoo
+    matched_domain: odoo.com
+    matched_by: domain
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connector_paths:
+    - connectors/applications/odoo
+    - connectors/applications/odoo-synconics
+    vendor_link: https://www.odoo.com/
+    builder: Fivetran
   status: not-a-workflow
   arazzo: null
 - slug: odoo-openpeppol-certified-service-providers
@@ -525,7 +600,7 @@
     signal_note: certified_products = one entry per Peppol-certified SERVICE (Access Point, SMP); authorities and
       countries are context, never read
     detected_by: sweep-einvoicing-tax.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   status: not-a-workflow
   arazzo: null
 - slug: odoo-dgfip-plateformes-agreees-france-e-invoicing-reform
@@ -553,7 +628,7 @@
     signal_note: certified_products = the immatriculation (one per operator); an operator awaiting the interop tests
       is participation only
     detected_by: sweep-einvoicing-tax.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   status: not-a-workflow
   arazzo: null
 - slug: odoo-zapier
@@ -590,7 +665,7 @@
   type: marketplace
   marketplace: n8n-nodes-base
   channel: open-source-node
-  evidence: https://github.com/n8n-io/n8n/tree/860f1273ebd73fabbd668cbec2c49ed9b48a286d/packages/nodes-base/nodes/Odoo
+  evidence: https://github.com/n8n-io/n8n/tree/f73dc337f8dc61a4fd44aebe41c55faafe4f53a4/packages/nodes-base/nodes/Odoo
   source: edge
   relationship: ipaas-bridge
   contract_reference:
@@ -617,7 +692,7 @@
   type: marketplace
   marketplace: pipedream-components
   channel: open-source-node
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/odoo
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/odoo
   source: edge
   relationship: ipaas-bridge
   contract_reference:
@@ -634,80 +709,5 @@
     actions: true
     sources: true
     builder: Pipedream repo (component)
-  status: not-a-workflow
-  arazzo: null
-- slug: odoo-metrc-validated-integrators
-  label: Metrc (validated integrators)
-  partner_name: Metrc (validated integrators)
-  category: Cannabis track-and-trace
-  type: register
-  channel: standard-directory
-  evidence: https://www.metrc.com/validated-integrators/
-  source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: Metrc Validated Integrators (metrc.com/validated-integrators, admin-ajax fetch_providers)
-    spec_file: null
-    standard: Metrc validated integrator (state cannabis track-and-trace)
-    role: metrc-validated-integrator
-    registered_name: Odoo Inc
-    register_id: Odoo Inc
-    website: https://www.odoo.com/
-    matched_domain: odoo.com
-    matched_by: domain
-    signal_note: certified_products = one entry per STATE with Full or Partial Validation (level kept); Get Access
-      = API access only, participation; Metrc drops lapsed integrators, lapsed never set
-    detected_by: sweep-regulated-retail.py
-    detected: '2026-10-18'
-    certified_products:
-    - product: 'Metrc validated integration: California'
-      state: California
-      level: Full Validation
-    - product: 'Metrc validated integration: Massachusetts'
-      state: Massachusetts
-      level: Full Validation
-    - product: 'Metrc validated integration: Michigan'
-      state: Michigan
-      level: Full Validation
-  status: not-a-workflow
-  arazzo: null
-- slug: odoo-fivetran
-  label: Fivetran
-  partner: fivetran
-  partner_name: Fivetran
-  type: marketplace
-  marketplace: fivetran-connectors
-  channel: elt-connector
-  evidence: https://fivetran.com/docs/connectors/applications/odoo
-  source: edge
-  relationship: ipaas-bridge
-  contract_reference:
-    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
-    spec_file: null
-    role: elt-connector:fivetran
-    registered_name: Odoo
-    matched_domain: odoo.com
-    matched_by: domain
-    detected_by: sweep-data-integration.py
-    detected: '2026-10-18'
-    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
-    connector_paths:
-    - connectors/applications/odoo
-    - connectors/applications/odoo-synconics
-    vendor_link: https://www.odoo.com/
-    builder: Fivetran
-  status: not-a-workflow
-  arazzo: null
-- slug: odoo-google-workspace-own
-  label: Google Workspace (own)
-  partner: google-workspace
-  partner_name: Google Workspace (own)
-  category: Google Workspace app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990
-  source: edge
-  relationship: platform-app
   status: not-a-workflow
   arazzo: null

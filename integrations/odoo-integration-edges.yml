@@ -10,7 +10,9 @@ checked:
 - https://fivetran.com/docs-sitemap.xml
 - https://fivetran.com/docs/connectors/partner-built-program
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
+- https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
 - https://github.com/n8n-io/n8n/tree/860f1273ebd73fabbd668cbec2c49ed9b48a286d/packages/nodes-base/nodes/
+- https://github.com/n8n-io/n8n/tree/f73dc337f8dc61a4fd44aebe41c55faafe4f53a4/packages/nodes-base/nodes/
 - https://marketplace.visualstudio.com/vscode
 - https://monid.ai/tools/odoo
 - https://n8n.io/integrations/odoo/
@@ -771,6 +773,58 @@ edges:
   listing_count: 1
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
+- partner_name: Metrc (validated integrators)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.metrc.com/validated-integrators/
+  category: Cannabis track-and-trace
+  contract_reference:
+    register: Metrc Validated Integrators (metrc.com/validated-integrators, admin-ajax fetch_providers)
+    spec_file: null
+    standard: Metrc validated integrator (state cannabis track-and-trace)
+    role: metrc-validated-integrator
+    registered_name: Odoo Inc
+    register_id: Odoo Inc
+    website: https://www.odoo.com/
+    matched_domain: odoo.com
+    matched_by: domain
+    signal_note: certified_products = one entry per STATE with Full or Partial Validation (level kept); Get Access
+      = API access only, participation; Metrc drops lapsed integrators, lapsed never set
+    detected_by: sweep-regulated-retail.py
+    detected: '2026-10-18'
+    certified_products:
+    - product: 'Metrc validated integration: California'
+      state: California
+      level: Full Validation
+    - product: 'Metrc validated integration: Massachusetts'
+      state: Massachusetts
+      level: Full Validation
+    - product: 'Metrc validated integration: Michigan'
+      state: Michigan
+      level: Full Validation
+  detected_by: sweep-regulated-retail.py
+  first_seen: '2026-10-18'
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Odoo Inbox Addin
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
 - partner_name: SPS Commerce
   partner: sps-commerce
   partner_match: domain
@@ -794,9 +848,36 @@ edges:
     - Software Provider
     signal_note: 'participation only: a directory listing, never a count'
     detected_by: sweep-consumer-goods.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   detected_by: sweep-consumer-goods.py
   first_seen: '2026-10-15'
+- partner_name: Fivetran
+  partner: fivetran
+  partner_match: aggregator
+  type: marketplace
+  marketplace: fivetran-connectors
+  channel: elt-connector
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://fivetran.com/docs/connectors/applications/odoo
+  category: null
+  contract_reference:
+    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
+    spec_file: null
+    role: elt-connector:fivetran
+    registered_name: Odoo
+    matched_domain: odoo.com
+    matched_by: domain
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connector_paths:
+    - connectors/applications/odoo
+    - connectors/applications/odoo-synconics
+    vendor_link: https://www.odoo.com/
+    builder: Fivetran
+  detected_by: sweep-data-integration.py
+  first_seen: '2026-10-18'
 - partner_name: OpenPeppol (certified service providers)
   partner: null
   partner_match: register
@@ -828,7 +909,7 @@ edges:
     signal_note: certified_products = one entry per Peppol-certified SERVICE (Access Point, SMP); authorities and
       countries are context, never read
     detected_by: sweep-einvoicing-tax.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   detected_by: sweep-einvoicing-tax.py
   first_seen: '2026-10-15'
 - partner_name: OpenPeppol (certified service providers)
@@ -852,7 +933,7 @@ edges:
     registered_name: Odoo SA
     matched_domain: odoo.com
     detected_by: sweep-einvoicing-tax.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   detected_by: sweep-einvoicing-tax.py
   first_seen: '2026-10-15'
 - partner_name: DGFiP plateformes agreees (France e-invoicing reform)
@@ -880,7 +961,7 @@ edges:
     signal_note: certified_products = the immatriculation (one per operator); an operator awaiting the interop tests
       is participation only
     detected_by: sweep-einvoicing-tax.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   detected_by: sweep-einvoicing-tax.py
   first_seen: '2026-10-15'
 - partner_name: Zapier
@@ -918,7 +999,7 @@ edges:
   channel: open-source-node
   relationship: ipaas-bridge
   direction: third-party
-  evidence: https://github.com/n8n-io/n8n/tree/860f1273ebd73fabbd668cbec2c49ed9b48a286d/packages/nodes-base/nodes/Odoo
+  evidence: https://github.com/n8n-io/n8n/tree/f73dc337f8dc61a4fd44aebe41c55faafe4f53a4/packages/nodes-base/nodes/Odoo
   category: null
   contract_reference:
     register: n8n built-in nodes (n8n-io/n8n packages/nodes-base)
@@ -945,7 +1026,7 @@ edges:
   channel: open-source-node
   relationship: ipaas-bridge
   direction: third-party
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/odoo
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/odoo
   category: null
   contract_reference:
     register: Pipedream components (PipedreamHQ/pipedream components/)
@@ -963,85 +1044,6 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
-- partner_name: Metrc (validated integrators)
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.metrc.com/validated-integrators/
-  category: Cannabis track-and-trace
-  contract_reference:
-    register: Metrc Validated Integrators (metrc.com/validated-integrators, admin-ajax fetch_providers)
-    spec_file: null
-    standard: Metrc validated integrator (state cannabis track-and-trace)
-    role: metrc-validated-integrator
-    registered_name: Odoo Inc
-    register_id: Odoo Inc
-    website: https://www.odoo.com/
-    matched_domain: odoo.com
-    matched_by: domain
-    signal_note: certified_products = one entry per STATE with Full or Partial Validation (level kept); Get Access
-      = API access only, participation; Metrc drops lapsed integrators, lapsed never set
-    detected_by: sweep-regulated-retail.py
-    detected: '2026-10-18'
-    certified_products:
-    - product: 'Metrc validated integration: California'
-      state: California
-      level: Full Validation
-    - product: 'Metrc validated integration: Massachusetts'
-      state: Massachusetts
-      level: Full Validation
-    - product: 'Metrc validated integration: Michigan'
-      state: Michigan
-      level: Full Validation
-  detected_by: sweep-regulated-retail.py
-  first_seen: '2026-10-18'
-- partner_name: Fivetran
-  partner: fivetran
-  partner_match: aggregator
-  type: marketplace
-  marketplace: fivetran-connectors
-  channel: elt-connector
-  relationship: ipaas-bridge
-  direction: third-party
-  evidence: https://fivetran.com/docs/connectors/applications/odoo
-  category: null
-  contract_reference:
-    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
-    spec_file: null
-    role: elt-connector:fivetran
-    registered_name: Odoo
-    matched_domain: odoo.com
-    matched_by: domain
-    detected_by: sweep-data-integration.py
-    detected: '2026-10-18'
-    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
-    connector_paths:
-    - connectors/applications/odoo
-    - connectors/applications/odoo-synconics
-    vendor_link: https://www.odoo.com/
-    builder: Fivetran
-  detected_by: sweep-data-integration.py
-  first_seen: '2026-10-18'
-- partner_name: Google Workspace (own)
-  partner: google-workspace
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990
-  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
-  apps:
-  - Odoo Inbox Addin
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Google Workspace app
 templates:
 - title: Create Odoo CRM leads from new Facebook Ads leads
   url: https://zapier.com/apps/facebook-lead-ads/integrations/odoo/54246/create-odoo-crm-leads-from-new-facebook-ads-leads
