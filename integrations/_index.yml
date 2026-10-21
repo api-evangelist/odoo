@@ -198,18 +198,6 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: odoo-shopify-own
-  label: Shopify (own)
-  partner: shopify
-  partner_name: Shopify (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://apps.shopify.com/odoo
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: odoo-metrc-validated-integrators
   label: Metrc (validated integrators)
   partner_name: Metrc (validated integrators)
@@ -243,19 +231,6 @@
     - product: 'Metrc validated integration: Michigan'
       state: Michigan
       level: Full Validation
-  status: not-a-workflow
-  arazzo: null
-- slug: odoo-google-workspace-own
-  label: Google Workspace (own)
-  partner: google-workspace
-  partner_name: Google Workspace (own)
-  category: Google Workspace app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990
-  source: edge
-  relationship: platform-app
   status: not-a-workflow
   arazzo: null
 - slug: odoo-sps-commerce
@@ -795,5 +770,43 @@
     sample_skills: []
     detected_by: sweep-agent-skills.py
     detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: odoo-shopify-own
+  label: Shopify (own)
+  partner: shopify
+  partner_name: Shopify (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://apps.shopify.com/odoo
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: odoo-google-workspace-own
+  label: Google Workspace (own)
+  partner: google-workspace
+  partner_name: Google Workspace (own)
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: odoo-eclipse-foundation-open-vsx
+  label: Eclipse Foundation (open-vsx)
+  partner: eclipse
+  partner_name: Eclipse Foundation (open-vsx)
+  category: IDE / developer extension marketplace listing
+  type: marketplace
+  marketplace: open-vsx
+  channel: partner-built
+  evidence: https://open-vsx.org/namespace/Odoo
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
