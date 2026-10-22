@@ -45,6 +45,9 @@ checked:
 - https://addons.mozilla.org/api/v5/addons/addon/<slug>/
 - https://addons.mozilla.org/api/v5/addons/search/?type=extension&app=firefox
 - https://chromewebstore.google.com/sitemap
+- https://api.first.org/data/v1/teams
+- https://raw.githubusercontent.com/CVEProject/cve-website/dev/src/assets/data/CNAsList.json
+- https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -949,6 +952,43 @@ edges:
   apps:
   - Timesheets Assistant
   - Odoo Domain Builder
+- partner_name: CVE Program (CVE Numbering Authorities)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.cve.org/PartnerInformation/ListofPartners/partner/odoo
+  category: Vulnerability disclosure (CVE Numbering Authority)
+  contract_reference:
+    register: CVE Program CNA list (github.com/CVEProject/cve-website CNAsList.json @ 239d3d9b68e0)
+    standard: CVE Program CNA Operational Rules (CVE Numbering Authority)
+    spec_file: null
+    role: cve-numbering-authority
+    registered_name: Odoo
+    matched_domain: odoo.com
+    matched_by: domain
+    cna_id: CNA-2018-0009
+    cna_short_name: odoo
+    cna_types:
+    - Vendor
+    cna_roles:
+    - CNA
+    scope: Odoo issues only.
+    top_level_root: MITRE Corporation
+    root: n/a
+    security_advisories:
+    - https://www.odoo.com/r/security-issues
+    disclosure_policy:
+    - https://www.odoo.com/security-report
+    country: Belgium
+    signal_note: listing as a CVE Numbering Authority = participation (a public commitment to assign CVE IDs and
+      publish advisories for its scope); never a count of CVEs
+    detected_by: sweep-vulnerability-disclosure-cna.py
+    detected: '2026-10-22'
+  detected_by: sweep-vulnerability-disclosure-cna.py
+  first_seen: '2026-10-22'
 templates:
 - title: Create Odoo CRM leads from new Facebook Ads leads
   url: https://zapier.com/apps/facebook-lead-ads/integrations/odoo/54246/create-odoo-crm-leads-from-new-facebook-ads-leads
