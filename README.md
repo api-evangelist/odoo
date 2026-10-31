@@ -1,4 +1,4 @@
-# Odoo (odoo)
+# Odoo
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,53 +66,122 @@
 
 Odoo is an open-source suite of business applications covering ERP, CRM, eCommerce, accounting, inventory, and more. Odoo provides external APIs for integrating with the Odoo platform using JSON-RPC and XML-RPC protocols.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/odoo/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/odoo/refs/heads/main/apis.yml)
+**Areas:** Business Applications · CRM · ERP · Open Source · Accounting
 
-## Scope
+## Odoo on APIs.io
 
-- **Type:** Index
+Everything profiled for Odoo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/odoo/](https://apis.io/providers/odoo/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Business Applications
-- CRM
-- ERP
-- Open Source
+- [Odoo External API](https://apis.io/apis/odoo/odoo-external-api/) — Odoo's external API for integrating with the platform using JSON-RPC and XML-RPC protocols for accessing all business modules.
+- [Odoo Common API](https://apis.io/apis/odoo/odoo-common-api/) — Unauthenticated XML-RPC endpoint for version + authentication
+- [Odoo JSON-RPC API](https://apis.io/apis/odoo/odoo-json-rpc-api/) — JSON-RPC transport for the same operations
+- [Odoo Object API](https://apis.io/apis/odoo/odoo-object-api/) — Authenticated XML-RPC endpoint for model operations
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Odoo External API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Odoo's external API for integrating with the platform using JSON-RPC and XML-RPC protocols for accessing all business modules.
+- [Odoo Agentic Access](https://apis.io/agentic-access/odoo/odoo-agentic-access/)
 
-- **Human URL:** [https://www.odoo.com/documentation/17.0/developer/reference/external_api.html](https://www.odoo.com/documentation/17.0/developer/reference/external_api.html)
+#### Collections (4)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- ERP
-- JSON-RPC
-- XML-RPC
+- [Odoo External API](https://apis.io/collections/odoo/open-odoo/)
+- [Odoo External Common API](https://apis.io/collections/odoo/open-odoo-common-api/)
+- [Odoo External Common JSON-RPC API](https://apis.io/collections/odoo/open-odoo-json-rpc-api/)
+- [Odoo External Common Object API](https://apis.io/collections/odoo/open-odoo-object-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://www.odoo.com/documentation/17.0/developer/reference/external_api.html)
-- [Postman Collection](collections/odoo.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/odoo.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Odoo Authentication](https://apis.io/security/odoo/odoo-authentication/)
+- [Odoo Domain Security](https://apis.io/security/odoo/odoo-domain-security/)
+- [Odoo Vulnerability Disclosure](https://apis.io/security/odoo/odoo-vulnerability-disclosure/)
 
-- [LinkedIn](https://www.linkedin.com/company/odoo)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Odoo Plans Pricing](https://apis.io/plans/odoo/odoo-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Odoo Rate Limits](https://apis.io/rate-limits/odoo/odoo-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Odoo Finops](https://apis.io/finops/odoo/odoo-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.odoo.com/)
 - [Documentation](https://www.odoo.com/documentation/)
-- [GitHub Organization](https://github.com/odoo)
-- [Integrations](https://apps.odoo.com/apps)
+- [Blog](https://www.odoo.com/blog)
+- [GitHub](https://github.com/odoo)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 47.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/odoo/](https://apis.io/providers/odoo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Odoo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/odoo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
